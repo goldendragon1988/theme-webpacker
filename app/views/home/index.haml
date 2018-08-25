@@ -6,9 +6,10 @@
   %nav.navigation__nav
     %ul.navigation__list
       %li.navigation__item
-        %a.navigation__link{:href => "#"}
+        = link_to new_user_session_path,
+          class: "navigation__link" do
           %span> 01
-          About Natous
+          Sign In
       %li.navigation__item
         %a.navigation__link{:href => "#"}
           %span> 02
@@ -32,19 +33,19 @@
     %h1.heading-primary
       %span.heading-primary--main Made in Order
       %span.heading-primary--sub is where life happens
-    %a.btn.btn--white.btn--animated{:href => "#section-tours"} Discover our tours
+    %a.btn.btn--white.btn--animated{:href => "#section-tours"} Lorem ipsum dolor
 %main
   %section.section-about
     .u-center-text.u-margin-bottom-big
       %h2.heading-secondary
-        Exciting tours for adventurous people
+        Lorem ipsum dolor sit amet consectetur
     .row
       .col-1-of-2
-        %h3.heading-tertiary.u-margin-bottom-small You're going to fall in love with nature
+        %h3.heading-tertiary.u-margin-bottom-small Lorem ipsum dolor sit amet consectetur adipisicing elit
         %p.paragraph
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur
           ducimus quam nisi exercitationem omnis earum qui.
-        %h3.heading-tertiary.u-margin-bottom-small Live adventures like you never have before
+        %h3.heading-tertiary.u-margin-bottom-small aspernatur libero repellat quis consequatur
         %p.paragraph
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nulla deserunt voluptatum nam.
         %a.btn-text{:href => "#"} Learn more →
@@ -213,8 +214,8 @@
 %footer.footer
   .footer__logo-box
     %picture.footer__logo
-      %source{:media => "(max-width: 37.5em)", :srcset => "/assets/logo-green-small-1x.png 1x, /assets/logo-green-small-2x.png 2x"}
-        %img{:alt => "Full logo", :src => "/assets/logo-green-2x.png", :srcset => "/assets/logo-green-1x.png 1x, /assets/logo-green-2x.png 2x"}/
+      %source{:media => "(max-width: 37.5em)", :srcset => "/assets/logo-white.png 1x, /assets/logo-white.png 2x"}
+        %img{:alt => "Full logo", :src => "/assets/logo-white.png", :srcset => "/assets/logo-white.png 1x, /assets/logo-white.png 2x"}/
   .row
     .col-1-of-2
       .footer__navigation

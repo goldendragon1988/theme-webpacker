@@ -1,0 +1,28 @@
+.be-wrapper.be-login
+  .be-content
+    .main-content.container-fluid
+      .splash-container
+        .card.card-border-color.card-border-color-primary
+          .card-header
+            = image_tag "logo-xx.png", class: "logo-img", height: 27, width: 102, alt: "logo"
+            %span.splash-description Please enter your user information.
+          .card-body
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .form-group
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control"
+              .form-group
+                = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "password"
+              - if devise_mapping.rememberable?
+                .form-group.row.login-tools
+                  .col-6.login-remember
+                    = f.label :remember_me, class: "custom-control custom-checkbox" do
+                      = f.check_box :remember_me, class: "custom-control-input"
+                      %span.custom-control-label Remember Me
+                  .col-6.login-forgot-password
+                    %a{:href => "#"} Forgot Password?
+              .form-group.login-submit
+                = f.submit "Log In", class: "btn btn-primary btn-xl"
+        .splash-footer
+          %span
+            Don't have an account?
+            %a{:href => "pages-sign-up.html"} Sign Up
