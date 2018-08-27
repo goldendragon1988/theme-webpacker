@@ -1,3 +1,363 @@
-dashboard
-- if user_signed_in?
-  = link_to "sign_out", destroy_user_session_path, method: :delete
+.be-wrapper.be-aside
+  %nav.navbar.navbar-expand.fixed-top.be-top-header
+    .container-fluid
+      .be-navbar-header
+        %a.navbar-brand{:href => "index.html"}
+      .be-right-navbar
+        %ul.nav.navbar-nav.float-right.be-user-nav
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              = image_tag "avatar.png", alt: "Avatar"
+              %span.user-name Túpac Amaru
+            .dropdown-menu{:role => "menu"}
+              .user-info
+                .user-name Túpac Amaru
+                .user-position.online Available
+              %a.dropdown-item{:href => "pages-profile.html"}
+                %span.icon.mdi.mdi-face>
+                Account
+              %a.dropdown-item{:href => "#"}
+                %span.icon.mdi.mdi-settings>
+                Settings
+              - if user_signed_in?
+                = link_to destroy_user_session_path,
+                  class: "dropdown-item",
+                  method: :delete do
+                  %span.icon.mdi.mdi-power>
+                  Logout
+        .page-title
+          %span Page Aside
+        %ul.nav.navbar-nav.float-right.be-icons-nav
+          %li.nav-item.dropdown
+            %a.nav-link.be-toggle-right-sidebar{"aria-expanded" => "false", :href => "#", :role => "button"}
+              %span.icon.mdi.mdi-settings
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              %span.icon.mdi.mdi-notifications
+              %span.indicator
+            %ul.dropdown-menu.be-notifications
+              %li
+                .title
+                  Notifications
+                  %span.badge.badge-pill 3
+                .list
+                  .be-scroller
+                    .content
+                      %ul
+                        %li.notification.notification-unread
+                          %a{:href => "#"}
+                            .image
+                              = image_tag "avatar2.png", alt: "Avatar"
+                            .notification-info
+                              .text
+                                %span.user-name Jessica Caruso
+                                accepted your invitation to join the team.
+                              %span.date 2 min ago
+                        %li.notification
+                          %a{:href => "#"}
+                            .image
+                              = image_tag "avatar3.png", alt: "Avatar"
+                            .notification-info
+                              .text
+                                %span.user-name Joel King
+                                is now following you
+                              %span.date 2 days ago
+                        %li.notification
+                          %a{:href => "#"}
+                            .image
+                              = image_tag "avatar4.png", alt: "Avatar"
+                            .notification-info
+                              .text
+                                %span.user-name John Doe
+                                is watching your main repository
+                              %span.date 2 days ago
+                        %li.notification
+                          %a{:href => "#"}
+                            .image
+                              = image_tag "avatar5.png", alt: "Avatar"
+                            .notification-info
+                              %span.text
+                                %span.user-name Emily Carter
+                                is now following you
+                              %span.date 5 days ago
+                .footer
+                  %a{:href => "#"} View all notifications
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              %span.icon.mdi.mdi-apps
+            %ul.dropdown-menu.be-connections
+              %li
+                .list
+                  .content
+                    .row
+                      .col
+                        %a.connection-item{:href => "#"}
+                          = image_tag "github.png", alt: "Github"
+                          %span GitHub
+                      .col
+                        %a.connection-item{:href => "#"}
+                          = image_tag "bitbucket.png", alt: "Bitbucket"
+                          %span Bitbucket
+                      .col
+                        %a.connection-item{:href => "#"}
+                          = image_tag "slack.png", alt: "Slack"
+                          %span Slack
+                    .row
+                      .col
+                        %a.connection-item{:href => "#"}
+                          = image_tag "dribbble.png", alt: "Dribble"
+                          %span Dribbble
+                      .col
+                        %a.connection-item{:href => "#"}
+                          = image_tag "mail_chimp.png", alt: "Mail Chimp"
+                          %span Mail Chimp
+                      .col
+                        %a.connection-item{:href => "#"}
+                          = image_tag "dropbox.png", alt: "Dropbox"
+                          %span Dropbox
+                .footer
+                  %a{:href => "#"} More
+  .be-left-sidebar
+    .left-sidebar-wrapper
+      %a.left-sidebar-toggle{:href => "#"} Page Aside
+      .left-sidebar-spacer
+        .left-sidebar-scroll
+          .left-sidebar-content
+            %ul.sidebar-elements
+              %li.divider Menu
+              %li.parent
+                %a{:href => "#"}
+                  %i.icon.mdi.mdi-home
+                  %span Home
+                %ul.sub-menu
+                  %li
+                    %a{:href => "pages-blank.html"} Blank Page
+                  %li
+                    %a{:href => "index.html"} Blank Page Header
+                  %li.active
+                    %a{:href => "pages-blank-aside.html"} Page Aside
+                  %li
+                    %a{:href => "pages-login.html"} Login
+                  %li
+                    %a{:href => "pages-404.html"} 404 Page
+                  %li
+                    %a{:href => "pages-sign-up.html"} Sign Up
+                  %li
+                    %a{:href => "pages-forgot-password.html"} Forgot Password
+      .progress-widget
+        .progress-data
+          %span.progress-value 60%
+          %span.name Current Project
+        .progress
+          .progress-bar.progress-bar-primary{:style => "width: 60%;"}
+  .be-content
+    %aside.page-aside
+      .be-scroller.nano
+        .nano-content
+          .content
+            %h2 Aside Element
+            %p
+              This is the
+              %b aside
+              content, you can easily add content and components to this element.
+            %p
+              Add the (
+              %code> be-aside
+              ) class to your main wrapper (
+              %code> be-wrapper
+              ) element for proper content spacing.
+    .main-content.container-fluid
+      %h3.text-center Content goes here!
+  %nav.be-right-sidebar
+    .sb-content
+      .tab-navigation
+        %ul.nav.nav-tabs.nav-justified{:role => "tablist"}
+          %li.nav-item{:role => "presentation"}
+            %a.nav-link.active{"aria-controls" => "tab1", "data-toggle" => "tab", :href => "#tab1", :role => "tab"} Chat
+          %li.nav-item{:role => "presentation"}
+            %a.nav-link{"aria-controls" => "tab2", "data-toggle" => "tab", :href => "#tab2", :role => "tab"} Todo
+          %li.nav-item{:role => "presentation"}
+            %a.nav-link{"aria-controls" => "tab3", "data-toggle" => "tab", :href => "#tab3", :role => "tab"} Settings
+      .tab-panel
+        .tab-content
+          #tab1.tab-pane.tab-chat.active{:role => "tabpanel"}
+            .chat-contacts
+              .chat-sections
+                .be-scroller-chat
+                  .content
+                    %h2 Recent
+                    .contact-list.contact-list-recent
+                      .user
+                        %a{:href => "#"}
+                          = image_tag "avatar1.png", alt: "Avatar"
+                          .user-data
+                            %span.status.away
+                            %span.name Claire Sassu
+                            %span.message Can you share the...
+                      .user
+                        %a{:href => "#"}
+                          = image_tag "avatar2.png", alt: "Avatar"
+                          .user-data
+                            %span.status
+                            %span.name Maggie jackson
+                            %span.message I confirmed the info.
+                      .user
+                        %a{:href => "#"}
+                          = image_tag "avatar3.png", alt: "Avatar"
+                          .user-data
+                            %span.status.offline
+                            %span.name Joel King
+                            %span.message Ready for the meeti...
+                    %h2 Contacts
+                    .contact-list
+                      .user
+                        %a{:href => "#"}
+                          = image_tag "avatar4.png", alt: "Avatar"
+                          .user-data2
+                            %span.status
+                            %span.name Mike Bolthort
+                      .user
+                        %a{:href => "#"}
+                          = image_tag "avatar5.png", alt: "Avatar"
+                          .user-data2
+                            %span.status
+                            %span.name Maggie jackson
+                      .user
+                        %a{:href => "#"}
+                          = image_tag "avatar6.png", alt: "Avatar"
+                          .user-data2
+                            %span.status.offline
+                            %span.name Jhon Voltemar
+              .bottom-input
+                %input{:name => "q", :placeholder => "Search...", :type => "text"}/
+                %span.mdi.mdi-search
+            .chat-window
+              .title
+                .user
+                  = image_tag "avatar2.png", alt: "Avatar"
+                  %h2 Maggie jackson
+                  %span Active 1h ago
+                %span.icon.return.mdi.mdi-chevron-left
+              .chat-messages
+                .be-scroller-messages
+                  .content
+                    %ul
+                      %li.friend
+                        .msg Hello
+                      %li.self
+                        .msg Hi, how are you?
+                      %li.friend
+                        .msg Good, I'll need support with my pc
+                      %li.self
+                        .msg Sure, just tell me what is going on with your computer?
+                      %li.friend
+                        .msg I don't know it just turns off suddenly
+              .chat-input
+                .input-wrapper
+                  %span.photo.mdi.mdi-camera
+                  %input{:autocomplete => "off", :name => "q", :placeholder => "Message...", :type => "text"}/
+                  %span.send-msg.mdi.mdi-mail-send
+          #tab2.tab-pane.tab-todo{:role => "tabpanel"}
+            .todo-container
+              .todo-wrapper
+                .be-scroller-todo
+                  .todo-content
+                    %span.category-title Today
+                    %ul.todo-list
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:checked => "checked", :type => "checkbox"}/
+                          %span.custom-control-label Initialize the project
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:type => "checkbox"}/
+                          %span.custom-control-label Create the main structure
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:type => "checkbox"}/
+                          %span.custom-control-label Updates changes to GitHub
+                    %span.category-title Tomorrow
+                    %ul.todo-list
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:type => "checkbox"}/
+                          %span.custom-control-label Initialize the project
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:type => "checkbox"}/
+                          %span.custom-control-label Create the main structure
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:type => "checkbox"}/
+                          %span.custom-control-label Updates changes to GitHub
+                      %li
+                        %label.custom-checkbox.custom-control.custom-control-sm
+                          %span.delete.mdi.mdi-delete
+                          %input.custom-control-input{:type => "checkbox"}/
+                          %span.custom-control-label{:title => "This task is too long to be displayed in a normal space!"} This task is too long to be displayed in a normal space!
+              .bottom-input
+                %input{:name => "q", :placeholder => "Create new task...", :type => "text"}/
+                %span.mdi.mdi-plus
+          #tab3.tab-pane.tab-settings{:role => "tabpanel"}
+            .settings-wrapper
+              .be-scroller-settings
+                %span.category-title General
+                %ul.settings-list
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st1{:checked => "checked", :name => "st1", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st1"}
+                    %span.name Available
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st2{:checked => "checked", :name => "st2", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st2"}
+                    %span.name Enable notifications
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st3{:checked => "checked", :name => "st3", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st3"}
+                    %span.name Login with Facebook
+                %span.category-title Notifications
+                %ul.settings-list
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st4{:name => "st4", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st4"}
+                    %span.name Email notifications
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st5{:checked => "checked", :name => "st5", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st5"}
+                    %span.name Project updates
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st6{:checked => "checked", :name => "st6", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st6"}
+                    %span.name New comments
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st7{:name => "st7", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st7"}
+                    %span.name Chat messages
+                %span.category-title Workflow
+                %ul.settings-list
+                  %li
+                    .switch-button.switch-button-sm
+                      %input#st8{:name => "st8", :type => "checkbox"}/
+                      %span
+                        %label{:for => "st8"}
+                    %span.name Deploy on commit
