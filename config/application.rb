@@ -17,11 +17,11 @@ module Mio
     config.assets.paths << Rails.root.join("vendor", "assets", "js")
 
     config.assets.precompile += %w(
-      .svg
-      .eot
-      .woff
-      .woff2
-      .ttf
+      *.svg
+      *.eot
+      *.woff
+      *.woff2
+      *.ttf
       *.png
     )
     # Settings in config/environments/* take precedence over those specified here.
