@@ -10164,7 +10164,7 @@ canvas {
   line-height: 60px;
   height: 60px;
   width: 142px;
-  background-image: asset-url("logo.png");
+  background-image: url("logo.png");
   background-repeat: no-repeat;
   background-position: 20px center;
   padding: 0 20px;
@@ -10174,7 +10174,7 @@ canvas {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .be-top-header .be-navbar-header .navbar-brand {
-    background-image: asset-url("logo-xx.png");
+    background-image: url("logo-xx.png");
     background-size: 102px 27px;
   }
 }
@@ -10630,12 +10630,12 @@ canvas {
 }
 
 .be-color-header .be-top-header .be-navbar-header .navbar-brand {
-  background-image: asset-url("logo-white.png");
+  background-image: url("logo-white.png");
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .be-color-header .be-top-header .be-navbar-header .navbar-brand {
-    background-image: asset-url("logo-white-xx.png");
+    background-image: url("logo-white-xx.png");
   }
 }
 
@@ -11873,7 +11873,7 @@ canvas {
 .be-offcanvas-menu .be-left-sidebar .menu-logo {
   height: 60px;
   width: 150px;
-  background-image: asset-url("logo.png");
+  background-image: url("logo.png");
   background-repeat: no-repeat;
   background-position: 20px center;
   display: block;
@@ -15508,7 +15508,7 @@ li.L9 {
 .invoice-logo {
   height: 54px;
   min-width: 204px;
-  background-image: asset-url("logo-xx.png");
+  background-image: url("logo-xx.png");
   background-repeat: no-repeat;
   background-position: 0;
 }
@@ -15517,7 +15517,7 @@ li.L9 {
   .invoice-logo {
     height: 27px;
     width: 102px;
-    background-image: asset-url("logo.png");
+    background-image: url("logo.png");
   }
 }
 
@@ -15533,7 +15533,7 @@ li.L9 {
   .invoice-logo {
     height: 27px !important;
     width: 102px !important;
-    background-image: asset-url("logo.png") !important;
+    background-image: url("logo.png") !important;
     display: block !important;
     background-repeat: no-repeat !important;
   }
