@@ -28,7 +28,7 @@
           Book now
 %header.header
   .header__logo-box
-    %img.header__logo{:alt => "Logo", :src => "/assets/logo-white.png"}
+    = image_tag "logo-white.png", alt: "Logo", class: "header__logo"
   .header__text-box
     %h1.heading-primary
       %span.heading-primary--main Made in Order
@@ -51,9 +51,9 @@
         %a.btn-text{:href => "#"} Learn more →
       .col-1-of-2
         .composition
-          %img.composition__photo.composition__photo--p1{:alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "/assets/nat-1-large.jpg", :srcset => "/assets/nat-1.jpg 300w, /assets/nat-1-large.jpg 1000w"}/
-          %img.composition__photo.composition__photo--p2{:alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "/assets/nat-2-large.jpg", :srcset => "/assets/nat-2.jpg 300w, /assets/nat-2-large.jpg 1000w"}/
-          %img.composition__photo.composition__photo--p3{:alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "/assets/nat-3-large.jpg", :srcset => "/assets/nat-3.jpg 300w, /assets/nat-3-large.jpg 1000w"}/
+          %img.composition__photo.composition__photo--p1{:alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-1-large.jpg", :srcset => "nat-1.jpg 300w, nat-1-large.jpg 1000w"}/
+          %img.composition__photo.composition__photo--p2{:alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-2-large.jpg", :srcset => "nat-2.jpg 300w, nat-2-large.jpg 1000w"}/
+          %img.composition__photo.composition__photo--p3{:alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-3-large.jpg", :srcset => "nat-3.jpg 300w, nat-3-large.jpg 1000w"}/
           /
             <img src="/assets/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
             <img src="/assets/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
@@ -154,8 +154,8 @@
   %section.section-stories
     .bg-video
       %video.bg-video__content{:autoplay => "", :loop => "", :muted => ""}
-        %source{:src => "/assets/video.mp4", :type => "video/mp4"}
-          %source{:src => "/assets/video.webm", :type => "video/webm"}
+        %source{:src => "video.mp4", :type => "video/mp4"}
+          %source{:src => "video.webm", :type => "video/webm"}
             Your browser is not supported!
     .u-center-text.u-margin-bottom-big
       %h2.heading-secondary
@@ -163,7 +163,7 @@
     .row
       .story
         %figure.story__shape
-          %img.story__img{:alt => "Person on a tour", :src => "/assets/nat-8.jpg"}/
+          %img.story__img{:alt => "Person on a tour", :src => "nat-8.jpg"}/
           %figcaption.story__caption Mary Smith
         .story__text
           %h3.heading-tertiary.u-margin-bottom-small I had the best week ever with my family
@@ -174,7 +174,7 @@
     .row
       .story
         %figure.story__shape
-          %img.story__img{:alt => "Person on a tour", :src => "/assets/nat-9.jpg"}/
+          %img.story__img{:alt => "Person on a tour", :src => "nat-9.jpg"}/
           %figcaption.story__caption Jack Wilson
         .story__text
           %h3.heading-tertiary.u-margin-bottom-small WOW! My life is completely different now
@@ -214,8 +214,8 @@
 %footer.footer
   .footer__logo-box
     %picture.footer__logo
-      %source{:media => "(max-width: 37.5em)", :srcset => "/assets/logo-white.png 1x, /assets/logo-white.png 2x"}
-        %img{:alt => "Full logo", :src => "/assets/logo-white.png", :srcset => "/assets/logo-white.png 1x, /assets/logo-white.png 2x"}/
+      %source{:media => "(max-width: 37.5em)", :srcset => "logo-white.png 1x, logo-white.png 2x"}
+        %img{:alt => "Full logo", :src => "logo-white.png", :srcset => "logo-white.png 1x, logo-white.png 2x"}/
   .row
     .col-1-of-2
       .footer__navigation
@@ -232,11 +232,12 @@
             %a.footer__link{:href => "#"} Terms
     .col-1-of-2
       %p.footer__copyright
-        Built by
-        %a.footer__link{:href => "#"} Jonas Schmedtmann
+        Lorem ipsum dolor
+        %a.footer__link{:href => "#"} Aliquam sem et
         for his online course
+        Lorem ipsum dolor
         = succeed "." do
-          %a.footer__link{:href => "#"} Advanced CSS and Sass
+          %a.footer__link{:href => "#"} consectetur adipiscing elit
 #popup.popup
   .popup__content
     .popup__left
