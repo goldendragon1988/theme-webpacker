@@ -51,9 +51,10 @@
         %a.btn-text{:href => "#"} Learn more →
       .col-1-of-2
         .composition
-          = image_set_tag "nat-1-large.jpg", { "nat-1.jpg" => "300w", "nat-1-large.jpg" => "1000w" }, class: "composition__photo.composition__photo--p1",  :alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-          = image_set_tag "nat-2-large.jpg", { "nat-2.jpg" => "300w", "nat-2-large.jpg" => "1000w" }, class: "composition__photo.composition__photo--p2",  :alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-          = image_set_tag "nat-3-large.jpg", { "nat-3.jpg" => "300w", "nat-3-large.jpg" => "1000w" }, class: "composition__photo.composition__photo--p3",  :alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          = image_set_tag "nat-1-large.jpg", { "nat-1.jpg" => "300w", "nat-1-large.jpg" => "1000w" }, class: "composition__photo composition__photo--p1",  :alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          = image_set_tag "nat-2-large.jpg", { "nat-2.jpg" => "300w", "nat-2-large.jpg" => "1000w" }, class: "composition__photo composition__photo--p2",  :alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          = image_set_tag "nat-3-large.jpg", { "nat-3.jpg" => "300w", "nat-3-large.jpg" => "1000w" }, class: "composition__photo composition__photo--p3",  :alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+
           -#%img.composition__photo.composition__photo--p2{:alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-2-large.jpg", :srcset => "nat-2.jpg 300w, nat-2-large.jpg 1000w"}/
 
           /
@@ -156,8 +157,8 @@
   %section.section-stories
     .bg-video
       %video.bg-video__content{:autoplay => "", :loop => "", :muted => ""}
-        %source{:src => "video.mp4", :type => "video/mp4"}
-          %source{:src => "video.webm", :type => "video/webm"}
+        %source{:src => asset_url("video.mp4"), :type => "video/mp4"}
+          %source{:src => asset_url("video.webm"), :type => "video/webm"}
             Your browser is not supported!
     .u-center-text.u-margin-bottom-big
       %h2.heading-secondary
@@ -165,7 +166,7 @@
     .row
       .story
         %figure.story__shape
-          %img.story__img{:alt => "Person on a tour", :src => "nat-8.jpg"}/
+          = image_tag "nat-8.jpg", alt: "Person on a tour", class: "story__img"
           %figcaption.story__caption Mary Smith
         .story__text
           %h3.heading-tertiary.u-margin-bottom-small I had the best week ever with my family
@@ -176,7 +177,7 @@
     .row
       .story
         %figure.story__shape
-          %img.story__img{:alt => "Person on a tour", :src => "nat-9.jpg"}/
+          = image_tag "nat-8.jpg", alt: "Person on a tour", class: "story__img"
           %figcaption.story__caption Jack Wilson
         .story__text
           %h3.heading-tertiary.u-margin-bottom-small WOW! My life is completely different now
@@ -217,7 +218,7 @@
   .footer__logo-box
     %picture.footer__logo
       %source{:media => "(max-width: 37.5em)", :srcset => "logo-white.png 1x, logo-white.png 2x"}
-        = image_tag "logo-white.png", alt: "Full logo", srcset: "logo-white.png 1x, logo-white.png 2x"
+        = image_set_tag "logo-white.png", { "logo-white.png" => "1x", "logo-white.png" => "2x" }, alt: "Full logo"
   .row
     .col-1-of-2
       .footer__navigation
@@ -236,7 +237,6 @@
       %p.footer__copyright
         Lorem ipsum dolor
         %a.footer__link{:href => "#"} Aliquam sem et
-        for his online course
         Lorem ipsum dolor
         = succeed "." do
           %a.footer__link{:href => "#"} consectetur adipiscing elit
