@@ -51,9 +51,11 @@
         %a.btn-text{:href => "#"} Learn more →
       .col-1-of-2
         .composition
-          = image_set_tag "nat-1-large.jpg", { "nat-1.jpg": "300w", "nat-1-large.jpg": "1000w" }, class: "composition__photo.composition__photo--p1",  :alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-          = image_set_tag "nat-2-large.jpg", { "nat-2.jpg": "300w", "nat-2-large.jpg": "1000w" }, class: "composition__photo.composition__photo--p2",  :alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-          = image_set_tag "nat-3-large.jpg", { "nat-3.jpg": "300w", "nat-3-large.jpg": "1000w" }, class: "composition__photo.composition__photo--p3",  :alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          = image_set_tag "nat-1-large.jpg", { "nat-1.jpg" => "300w", "nat-1-large.jpg" => "1000w" }, class: "composition__photo.composition__photo--p1",  :alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          = image_set_tag "nat-2-large.jpg", { "nat-2.jpg" => "300w", "nat-2-large.jpg" => "1000w" }, class: "composition__photo.composition__photo--p2",  :alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          = image_set_tag "nat-3-large.jpg", { "nat-3.jpg" => "300w", "nat-3-large.jpg" => "1000w" }, class: "composition__photo.composition__photo--p3",  :alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+          -#%img.composition__photo.composition__photo--p2{:alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-2-large.jpg", :srcset => "nat-2.jpg 300w, nat-2-large.jpg 1000w"}/
+
           /
             <img src="/assets/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
             <img src="/assets/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
