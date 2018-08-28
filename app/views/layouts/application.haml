@@ -9,6 +9,6 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body{class: params[:controller] == "sessions" ? "be-splash-screen" : ""}
+  %body{class: params[:controller] == "devise/sessions" ? "be-splash-screen" : ""}
     = yield
     = javascript_include_tag 'beagle'
