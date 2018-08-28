@@ -51,9 +51,9 @@
         %a.btn-text{:href => "#"} Learn more →
       .col-1-of-2
         .composition
-          %img.composition__photo.composition__photo--p1{:alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-1-large.jpg", :srcset => "nat-1.jpg 300w, nat-1-large.jpg 1000w"}/
-          %img.composition__photo.composition__photo--p2{:alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-2-large.jpg", :srcset => "nat-2.jpg 300w, nat-2-large.jpg 1000w"}/
-          %img.composition__photo.composition__photo--p3{:alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :src => "nat-3-large.jpg", :srcset => "nat-3.jpg 300w, nat-3-large.jpg 1000w"}/
+          = image_tag "nat-1-large.jpg", class: "composition__photo.composition__photo--p1",  :alt => "Photo 1", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :srcset => "nat-1.jpg 300w, nat-1-large.jpg 1000w"
+          = image_tag "nat-2-large.jpg", class: "composition__photo.composition__photo--p2",  :alt => "Photo 2", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :srcset => "nat-2.jpg 300w, nat-2-large.jpg 1000w"
+          = image_tag "nat-3-large.jpg", class: "composition__photo.composition__photo--p3",  :alt => "Photo 3", :sizes => "(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px", :srcset => "nat-3.jpg 300w, nat-3-large.jpg 1000w"
           /
             <img src="/assets/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
             <img src="/assets/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
@@ -215,7 +215,7 @@
   .footer__logo-box
     %picture.footer__logo
       %source{:media => "(max-width: 37.5em)", :srcset => "logo-white.png 1x, logo-white.png 2x"}
-        %img{:alt => "Full logo", :src => "logo-white.png", :srcset => "logo-white.png 1x, logo-white.png 2x"}/
+        = image_tag "logo-white.png", alt: "Full logo", srcset: "logo-white.png 1x, logo-white.png 2x"
   .row
     .col-1-of-2
       .footer__navigation
@@ -241,8 +241,8 @@
 #popup.popup
   .popup__content
     .popup__left
-      %img.popup__img{:alt => "Tour photo", :src => "/assets/nat-8.jpg"}/
-      %img.popup__img{:alt => "Tour photo", :src => "/assets/nat-9.jpg"}/
+      = image_tag "nat-8.jpg", alt: "Tour Photo", class: "popup__img"
+      = image_tag "nat-9.jpg", alt: "Tour Photo", class: "popup__img"
     .popup__right
       %a.popup__close{:href => "#section-tours"} ×
       %h2.heading-secondary.u-margin-bottom-small Start booking now
